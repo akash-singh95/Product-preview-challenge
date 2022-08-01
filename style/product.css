@@ -1,67 +1,85 @@
+
+/* Generic layout stuff */
+
+html,body,main {
+  width:100vw;
+  height:100vh;
+
+}
 * {
   margin:0;
   padding:0;
   box-sizing:border-box;
-}
+} 
+
 
 body {
   background-color: hsl(30, 38%, 92%);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
 }
+
+
+/* Product layout */
 
 .container {
 display:flex;
-width:max(50%,200px);
-margin:17vh auto;
+flex-direction:column;
+width:min(80vw,25rem) ;
+height:auto;
+margin-top:max(3vh,4rem);
+margin-inline:auto;
 overflow:hidden;
 border-radius:1rem;
 }
 
-.container > * {
-  flex-basis:100%;
-}
-
-
-
 img {
-  width:100%;
-  display:block;
+  max-width:100%;
   height:100%;
+  display:block;
 }
 
+.img_child {
+  flex:1 1 0;
+}
 .text_child {
+  flex:1 1 0 ;
   background-color:hsl(0, 0%, 100%);
-  padding-left:3vw;
-  padding-right:3vw;
+  padding-left:1.2em;
+  padding-right:1.2em;
 }
 .initial {
   color:hsl(228, 12%, 48%);
-  margin-top:4vh;
-  margin-bottom:4vh;
+  margin-top:1.5rem;
+  margin-bottom:1rem;
   font-family:Montserrat,sans-serif;
-  letter-spacing:0.3em;
+  letter-spacing:0.4em;
   font-size:0.7rem;
 }
 
 h1 {
   font-family:Fraunces,sans-serif;
-  line-height:1em;
-  margin-bottom:4vh;
+  font-size:1.8rem;
+  line-height:1.1;
+  margin-bottom:1rem;
 }
 
 .description {
   font-family:Montserrat,sans-serif;
   color:hsl(228, 12%, 48%);
-  font-size:14px;
+  font-size:0.875rem;
   line-height:1.5em;
-  margin-bottom:4vh;
+  margin-bottom:1rem;
   
 }
 
 .price {
   font-family:Fraunces,sans-serif;
-  color:rgb(8, 114, 8);
-  margin-bottom:4vh;
-  font-size:24px;
+  color:rgb(19, 94, 19);
+  margin-bottom:1.5rem;
+  font-size:1.875rem;
   position:relative;
 }
 
@@ -70,7 +88,7 @@ h1 {
   color:hsl(228, 12%, 48%);
   font-size:10px;
   text-decoration:line-through;
-  padding-left:2em;
+  padding-left:1.5em;
   position:absolute;
   top:50%;
   transform:translateY(-50%);
@@ -80,8 +98,8 @@ h1 {
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:0.8vw;
-  background-color:rgb(8, 114, 8);
+  gap:0.5rem;
+  background-color:rgb(19, 94, 19);
   color:white;
   font-family:Montserrat,sans-serif;
   font-size:12px;
@@ -91,7 +109,7 @@ h1 {
   border:none;
   border-radius:0.6em;
   transition:0.5s;
-  margin-bottom:2vh;
+  margin-bottom:1.5rem;
 }
 
 .atc:hover {
@@ -100,23 +118,29 @@ h1 {
 }
 
 
-@media (max-width:940px) {
+@media only screen and (min-width:770px) {
 
   .container {
-    display:flex;
-    flex-direction:column;
-    width:80%vw;
-    margin-top:5vh;
-    margin-bottom:5vh;
-   
-    }
+    flex-direction:row;
+    width:min(55vw,600px);
+    height:auto;
+    margin-top:15vh;
+  }
 
-    .img_child {
-      height:max(50%,200px);
-    }
+  img {
+    width:100%;
+    max-height:100%;
+  }
 
+  .text_child {
+    flex:0.8 1 0;
+    padding-left:2em;
+    padding-right:2em;
+  }
 
+  .price {
 
+    margin-bottom:3rem;
 
+  }
 }
-

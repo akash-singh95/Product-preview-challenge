@@ -23,7 +23,11 @@
   <main>
     <div class="container">
       <div class="img_child">
-      <img src="images/image-product-desktop.jpg">
+        <picture>
+          <source media="(max-width:770px)" srcset="images/image-product-mobile.jpg" >
+          <source media="(min-width:770px)" srcset="images/image-product-desktop.jpg" >
+          <img src="images/image-product-desktop.jpg" alt="product image">
+        </picture>
       </div>
     <div class="text_child">
       <p class="initial">PERFUME</p>
